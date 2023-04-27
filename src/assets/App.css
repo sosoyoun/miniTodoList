@@ -49,7 +49,7 @@ body { width: 100vw; font-family: 'Pretendard-Regular'; overflow-x: hidden; over
 .todoLayout .todoList::-webkit-scrollbar { width: 8px }
 .todoLayout .todoList::-webkit-scrollbar-thumb { background-color: #D8C9D9; border-radius: 10px }
 .todoLayout .todoList > * { font-size: 22px; color: white }
-.todoLayout .todoList > span { display: block; text-align: center; letter-spacing: 1.5px; cursor: default }
+.todoLayout .todoList > span { display: block; text-align: center; padding-top: 8rem; letter-spacing: 1.5px; cursor: default }
 .todoLayout .todoList li { position: relative; display: flex; justify-content: space-between; width: 100%; min-height: 2.5rem; padding: 1.5rem 0 }
 .todoLayout .todoList li::after { content: ''; position: absolute; bottom: 0; left: 0.8rem; width: 97%; border-bottom: 1px solid white }
 .todoLayout .todoList li:last-child::after { border-style: none }
@@ -68,7 +68,7 @@ body { width: 100vw; font-family: 'Pretendard-Regular'; overflow-x: hidden; over
   .formLayout .newItemForm { height: 7rem }
   .formLayout .newItemForm label span { display: inline-block; padding-left: 1rem; font-size: 15px }
   .formLayout .newItemForm input { height: 2.8rem; border-radius: 15px; font-size: 22px; font-family: 'Pretendard-Medium' }
-  .todoLayout { height: 100vh; padding-top: 10.5rem; background-image: url(./image/bg_mobile.png) }
+  .todoLayout { height: 100vh; padding-top: 10.5rem; background-image: url(./image/bg_mobile.png); background-size: contain }
   .todoLayout .todoList { height: 36rem; padding: 0 1rem }
   .todoLayout .todoList::-webkit-scrollbar { width: 0 }
   .todoLayout .todoList > * { font-size: 17px }
