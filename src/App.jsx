@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { FormLayerComponent } from './FormLayerComponent'
-import './App.css'
 import { TodoListComponent } from './TodoListComponent'
+import './assets/App.css'
 
 function App() {
   const [todoList, setTodoList] = useState(() => {

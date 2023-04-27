@@ -3,15 +3,16 @@ export function TodoItemsComponent({ id, checked, title, toggleTodoList, deleteT
 
     return (
         <li>
-            <label htmlFor="">
+            <label htmlFor={id}>
                 <input
                     type="checkbox"
+                    id={id}
                     checked={checked}
                     onChange={e => toggleTodoList(id, e.target.checked)}
                 />
-                <span>{title}</span>
+                <label htmlFor={id}>{title}</label>
             </label>
-            <button className="btn" onClick={() => deleteTodoList(id)} >삭제하기</button>
+            <button className="btn" onClick={() => deleteTodoList(id)} ></button>
         </li>
     )
 }

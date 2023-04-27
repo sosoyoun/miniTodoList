@@ -6,7 +6,7 @@ export function FormLayerComponent({ onSubmit }) {
     function onClickSubmit(e) {
         e.preventDefault()
 
-        if (newItem === null || "") return
+        if (newItem === "") return
         onSubmit(newItem)
 
         setNewItem("")
@@ -14,13 +14,16 @@ export function FormLayerComponent({ onSubmit }) {
     return (
         <div onSubmit={onClickSubmit} className="formLayout">
             <form className="newItemForm">
-                <label htmlFor="item">Input text</label>
+                <label htmlFor="item">
+                    좋은 하루!
+                    <span>오늘은 뭐할꺼야?</span>
+                </label>
                 <input
                     value={newItem}
+                    placeholder="오늘 할껄 적어줘,"
                     onChange={e => setNewItem(e.target.value)}
                     type="text" id="item" />
             </form>
-            <button className="btn">추가</button>
         </div>
     )
 }

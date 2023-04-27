@@ -5,9 +5,8 @@ export function TodoListComponent({ todoList, toggleTodoList, deleteTodoList }) 
     console.log("[ TodoListComponent ]:", todoList);
     return (
         <div className="todoLayout">
-            <div>TODO List</div>
             <ul className="todoList">
-                {todoList.length === 0 && "리스트가 없습니다"}
+                <span>{todoList.length === 0 && "오늘의 할일을 추가해주세요"}</span>
                 {todoList.map(todo => {
                     console.log("[todo] : ", todo);
                     return (
@@ -21,6 +20,5 @@ export function TodoListComponent({ todoList, toggleTodoList, deleteTodoList }) 
                 })}
             </ul>
         </div>
-
     )
 }

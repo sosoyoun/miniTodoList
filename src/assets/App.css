@@ -1,0 +1,82 @@
+/* reset.css 간략본 */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a, li {
+  direction: none;
+  list-style: none;
+}
+input { outline: none }
+
+/*fonts.css*/
+@font-face {
+    font-family: 'Pretendard-Black';
+    src: url('./fonts/Pretendard-Black.woff');  
+}
+@font-face {
+    font-family: 'Pretendard-ExtraBold';
+    src: url('./fonts/Pretendard-ExtraBold.woff');
+}
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('./fonts/Pretendard-Bold.woff');
+}
+@font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('./fonts/Pretendard-Medium.woff');
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('./fonts/Pretendard-Regular.woff');
+}
+
+/* 레이어 스타일링 */
+body { width: 100vw; font-family: 'Pretendard-Regular'; overflow-x: hidden; overflow-y: auto; }
+#root { width: 56.250em; height: 58rem; margin: 0.5rem auto 0; background-color: rgba(190, 52, 85, 0.15); border-radius: 50px; overflow: hidden }
+
+.formLayout { display: flex; flex-wrap: wrap; padding: 4rem 2.5rem 2.5rem }
+.formLayout .newItemForm { display: flex; flex-direction: column; justify-content: space-between; width: 100%; height: 10rem; }
+.formLayout .newItemForm label { font-size: 30px; color: white; font-family: 'Pretendard-ExtraBold' }
+.formLayout .newItemForm label span { display: block; margin-top: 0.2rem; font-size: 11px; color: #6667AB }
+.formLayout .newItemForm input { width: 100%; height: 4.375rem; border-radius: 20px; padding: 0 1rem; font-size: 30px }
+.formLayout .newItemForm input::placeholder { color: #C3C3C3 }
+
+.todoLayout { height: 45rem; padding-top: 12rem; background: url(./image/bg_desktop.png) no-repeat top center }
+.todoLayout .todoList { height: 28rem; padding: 0 2.5rem; overflow-y: auto }
+.todoLayout .todoList::-webkit-scrollbar { width: 8px }
+.todoLayout .todoList::-webkit-scrollbar-thumb { background-color: #D8C9D9; border-radius: 10px }
+.todoLayout .todoList > * { font-size: 22px; color: white }
+.todoLayout .todoList > span { display: block; text-align: center; letter-spacing: 1.5px; cursor: default }
+.todoLayout .todoList li { position: relative; display: flex; justify-content: space-between; width: 100%; min-height: 2.5rem; padding: 1.5rem 0 }
+.todoLayout .todoList li::after { content: ''; position: absolute; bottom: 0; left: 0.8rem; width: 97%; border-bottom: 1px solid white }
+.todoLayout .todoList li:last-child::after { border-style: none }
+.todoLayout .todoList li label { display: flex; width: 100%; padding: 0 1.5rem; cursor: pointer }
+.todoLayout .todoList li label:hover { color: #FDFF98 }
+.todoLayout .todoList li label input[type="checkbox"] { display: none }
+.todoLayout .todoList li label input[type="checkbox"]+label { display: block; position: relative }
+.todoLayout .todoList li label input[type="checkbox"]+label:before { content: ''; position: absolute; top: 1px; left: -1rem; display: block; width: 30px; height: 30px; background: url(./image/em_check_box.svg) no-repeat }
+.todoLayout .todoList li label input[type="checkbox"]:checked+label:before { background: url(./image/checked.svg) no-repeat }
+.todoLayout .todoList li .btn { width: 2rem; background: url(./image/delete.svg) no-repeat top center }
+.todoLayout .todoList li .btn:hover { background-image: url(./image/delete_checked.svg); cursor: pointer }
+
+@media (max-width: 767px) {
+  #root { width: 100%; height: 100vh; margin: 0 }
+  .formLayout { padding: 2rem }
+  .formLayout .newItemForm { height: 7rem }
+  .formLayout .newItemForm label span { display: inline-block; padding-left: 1rem; font-size: 15px }
+  .formLayout .newItemForm input { height: 2.8rem; border-radius: 15px; font-size: 22px; font-family: 'Pretendard-Medium' }
+  .todoLayout { height: 100vh; padding-top: 10.5rem; background-image: url(./image/bg_mobile.png) }
+  .todoLayout .todoList { height: 36rem; padding: 0 1rem }
+  .todoLayout .todoList::-webkit-scrollbar { width: 0 }
+  .todoLayout .todoList > * { font-size: 17px }
+  .todoLayout .todoList > span { font-size: 20px; margin-top: 10rem }
+  .todoLayout .todoList li { min-height: 2rem; padding: 1.2rem 0 }
+  .todoLayout .todoList li::after { left: 2rem; width: 88%; border-bottom: 2px dashed rgba(255, 255, 255, 0.3) }
+  .todoLayout .todoList li label { padding: 0 1.2rem; }
+  .todoLayout .todoList li label input[type="checkbox"]+label:before { background-size: 22px }
+  .todoLayout .todoList li label input[type="checkbox"]:checked+label:before { background-size: 22px }
+  .todoLayout .todoList li .btn { background-size: 24px }
+}
