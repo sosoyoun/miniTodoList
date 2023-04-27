@@ -30,6 +30,7 @@ function App() {
         if (todo.id === id) {
           return { ...todo, checked }
         }
+        return todo
       })
     })
   }

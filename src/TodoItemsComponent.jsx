@@ -1,6 +1,8 @@
 export function TodoItemsComponent({ id, checked, title, toggleTodoList, deleteTodoList }) {
+    console.log("[TodoItemsComponent] :", id, checked, title);
+
     return (
-        <li key={id}>
+        <li>
             <label htmlFor="">
                 <input
                     type="checkbox"
